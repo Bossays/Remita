@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Optimized for Galaxy S21 touch viewport (360px grid) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Remita Checkout - Galaxy S21</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #2b3d32;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 12px;
+    }
+
+    /* Specifically sized for S21 360px width container */
+    .wrapper {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .checkout-card {
+      background-color: #ffffff;
+      width: 100%;
+      border-radius: 18px;
+      padding: 18px 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .center-container {
+      text-align: center;
+    }
+
+    .header-selector {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: #f4f6f8;
+      padding: 8px 14px;
+      border-radius: 20px;
+      margin: 0 auto 14px auto;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .badge-check {
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .merchant-banner {
+      background-color: #d85128;
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: #444;
+      margin-bottom: 4px;
+    }
+
+    .expiry-text {
+      text-align: center;
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    /* Oldstyle figures (bouncing numbers) */
+    .oldstyle-number {
+      font-family: 'Georgia', serif;
+      font-variant-numeric: oldstyle-nums;
+      font-feature-settings: "onum";
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f7f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .detail-label {
+      color: #666;
+    }
+
+    .detail-value {
+      font-weight: 700;
+      color: #111;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Interactive Copy Button */
+    .copy-btn {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:active {
+      background-color: #e2e2e2;
+      transform: scale(0.95);
+    }
+
+    .sub-note {
+      text-align: center;
+      font-size: 10.5px;
+      color: #666;
+      margin: 12px 0 14px 0;
+    }
+
+    /* Interactive CTA Button */
+    .btn-sent {
+      width: 100%;
+      background-color: #1ea377;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn-sent:active {
+      background-color: #157958;
+      transform: scale(0.98);
+    }
+
+    /* Remita Logo */
+    .footer-security {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #ffffff;
+    }
+
+    .remita-logo {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.5px;
+      color: #e5532a;
+    }
+
+    .remita-logo::after {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background-color: #e5532a;
+      border-radius: 50%;
+      margin-left: 1px;
+      align-self: flex-end;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="checkout-card">
+      
+      <div class="center-container">
+        <div class="header-selector">
+          <span style="font-size: 9px;">▼</span>
+          <span>💼 Bank Transfer</span>
+          <div class="badge-check">✓</div>
+        </div>
+      </div>
+
+      <div class="merchant-banner">
+        NATIONAL OPEN UNIVERSITY -<br />
+        <span class="oldstyle-number">051702400100</span>
+      </div>
+
+      <div class="section-title">ACCOUNT DETAILS</div>
+      <div class="expiry-text">
+        This account expires in <strong id="timer" class="oldstyle-number">29:58</strong> and can only<br />
+        be used for this transaction
+      </div>
+
+      <div class="detail-row">
+        <span class="detail-label">Account Name:</span>
+        <span class="detail-value">Remita Checkout -</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="detail-label">Account Number:</span>
+        <span class="detail-value">
+          <span id="account-num" class="oldstyle-number">4552196439</span>
+          <button id="copy-btn" class="copy-btn" onclick="copyAccNumber()">📋 Copy</button>
+        </span>
+      </div>
+
+      <div class="detail-row">
+        <span class="detail-label">Bank Name:</span>
+        <span class="detail-value">Fidelity</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="detail-label">Total Amount:</span>
+        <span class="detail-value">NGN <span class="oldstyle-number">29,661.25</span></span>
+      </div>
+
+      <p class="sub-note">
+        *Please make a transfer to the account details above.
+      </p>
+
+      <button id="main-btn" class="btn-sent" onclick="handlePaymentSent()">I've sent the money</button>
+    </div>
+
+    <div class="footer-security">
+      <span>🔒 Secured by</span>
+      <span class="remita-logo">remita</span>
+    </div>
+  </div>
+
+  <script>
+    // 1. Copy to Clipboard Function
+    function copyAccNumber() {
+      const accNum = document.getElementById('account-num').innerText;
+      navigator.clipboard.writeText(accNum);
+      
+      const btn = document.getElementById('copy-btn');
+      btn.innerText = 'Copied! ✓';
+      btn.style.backgroundColor = '#e8f5e9';
+      btn.style.color = '#2e7d32';
+
+      setTimeout(() => {
+        btn.innerText = '📋 Copy';
+        btn.style.backgroundColor = '#ffffff';
+        btn.style.color = '#000000';
+      }, 2000);
+    }
+
+    // 2. Active Countdown Timer (29:58)
+    let totalSeconds = 29 * 60 + 58;
+    const timerElement = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+      if (totalSeconds <= 0) {
+        clearInterval(countdown);
+        timerElement.innerText = "00:00";
+        alert("Transaction session expired!");
+        return;
+      }
+      totalSeconds--;
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      timerElement.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }, 1000);
+
+    // 3. Payment Sent Confirmation
+    function handlePaymentSent() {
+      const btn = document.getElementById('main-btn');
+      btn.innerText = 'Verifying Payment...';
+      btn.style.backgroundColor = '#2979ff';
+
+      setTimeout(() => {
+        alert('Payment confirmation received! Processing transaction.');
+        btn.innerText = "I've sent the money";
+        btn.style.backgroundColor = '#1ea377';
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
